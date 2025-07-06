@@ -29,7 +29,7 @@ Ensure [Docker](https://www.docker.com/products/docker-desktop/) is installed on
    
 2. **Build and start the containers**:
    ```bash
-   docker-compose up --build
+   docker compose up --build
 
 ## Usage
 ### Running the Scraper

@@ -1,0 +1,24 @@
+services:
+  web:
+    container_name: scraper_app
+    build: .
+    ports:
+      - "8000:8000"
+    depends_on:
+      - selenium
+    networks:
+      - bazar_network
+    env_file:
+      - .env
+
+  selenium:
+    image: selenium/standalone-firefox:latest
+    shm_size: '2gb'
+    ports:
+      - "4444:4444"
+    networks:
+      - bazar_network
+
+networks:
+  bazar_network:
+    driver: bridge
